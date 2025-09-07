@@ -1,0 +1,17 @@
+<!-- Main Content Area -->
+<section class="feed">
+    <div class="post-creator">
+        <textarea rows="10" cols="80" type="text" #CreatePostInput placeholder="What do you want to talk about?" name="inputPost"></textarea>
+        <div class="post-options">
+            <button><i class="fas fa-image"></i> Photo</button>
+            <button><i class="fas fa-video"></i> Video</button>
+            <button><i class="fas fa-poll"></i> Poll</button>
+            <button (click)="rewriteWithAI()" name="btnAI" ><i class="fas fa-poll"></i> Rewrite with AI</button>
+            <button (click)="savePost()" name="btnCreatePost" ><i class="fas fa-poll"></i> Create Post</button>
+        </div>
+    </div>
+    <app-post
+        *ngFor="let post of posts"
+        [post]="post"
+    ></app-post>    
+</section>
